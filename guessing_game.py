@@ -1,18 +1,28 @@
-import random 
+import random
 
-guess = input("Please Guess: ")
+number = random.randint(1, 9)
 
-number = random.randrange(1,10)
+chances = 0
 
-chance = 5
+print("Guess a number (between 1 and 9):")
 
-if (guess == number):
-    print("You Won")
-elif(chance == 0):
-    print("Game Over")
-else:
-    print("Guess Again")
-    chance = chance - 1
+while chances < 5:
+
+
+    guess = int(input("Enter your guess: "))
+
+    if guess == number:
+        print("Congratulation YOU WON!!!")
+        break
+    elif guess < number:
+        print("Your guess was too low: Guess a number higher than", guess)
+    else:
+        print("Your guess was too high: Guess a number lower than", guess)
+
+    chances += 1
+
+if not chances < 5:
+    print("YOU LOSE!!! The number is", number)
 
 
 '''
